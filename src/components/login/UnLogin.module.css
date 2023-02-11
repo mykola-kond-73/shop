@@ -1,0 +1,8 @@
+.rootdiv{
+    font-size: 1.3em;
+}
+
+.rootdiv:hover{
+    color:#657DB9;
+    cursor:pointer;
+}

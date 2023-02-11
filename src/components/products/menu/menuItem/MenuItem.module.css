@@ -1,0 +1,11 @@
+.rootItem{
+    padding:15px;
+    font-size: 1.1em;
+    background-color: #061A4B;
+    border: none;
+}
+
+.rootItem:hover{
+    background-color: #202F56;
+    color:#657DB9;
+}

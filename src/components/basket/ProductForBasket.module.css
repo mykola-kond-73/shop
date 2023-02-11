@@ -1,0 +1,21 @@
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonDisabled{
+    background-color:#035809 ;
+    color: rgb(127, 125, 125);
+}
+
+.button{
+    margin: 7px 5px 0;
+    color: rgb(211, 208, 208);
+    font-size: 1.15em;
+    padding: 5px;
+    border:none;
+}
+
+.count{
+font-size: 1.3em;
+}

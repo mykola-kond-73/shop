@@ -1,0 +1,85 @@
+.rootForm {
+    grid-area: nav;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 300px;
+
+    background-color: #174B4D;
+    padding-bottom: 30px;
+
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.mainBody,
+.button {
+    margin-top: 15px;
+}
+
+.button>button{
+    border: none;
+    background-color:#1E6523;
+    padding: 3px 7px;
+}
+
+.mainBody>div,
+.additionalFilterBar>div {
+    width: 270px;
+    margin: 30px 0;
+}
+
+.checkbox {
+    position: relative;
+    left: 35%;
+}
+
+.filterRoot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 25px 0px;
+}
+.filterRoot>div{
+    width: 500px;
+}
+.filterRoot>div>div>span,
+.filterRoot>div>div>label{
+    margin-top:15px
+}
+.searchButton{
+    position: relative;
+    left: 45%;
+}
+
+
+@media (min-width:300px) and (max-width:800px) {
+    .rootForm {
+        margin: 5px 0 20px;
+    }
+}
+
+@media (min-width:400px) and (max-width:500px) {
+    .mainBody>div,
+    .additionalFilterBar>div {
+        width: 235px;
+    }
+
+    .filterRoot>div{
+        width: 370px;
+    }
+}
+
+@media (min-width:300px) and (max-width:400px) {
+    .mainBody>div,
+    .additionalFilterBar>div {
+        width: 175px;
+    }
+
+    .filterRoot>div{
+        width: 270px;
+    }
+}

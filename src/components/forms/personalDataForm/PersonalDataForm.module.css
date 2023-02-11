@@ -1,0 +1,18 @@
+.root,
+.rootForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fields{
+    color:black
+}
+
+.button {
+    padding: 9px;
+    font-weight: 500;
+    font-size: 1.1em;
+    margin-left: 12px;
+    border: none;
+}

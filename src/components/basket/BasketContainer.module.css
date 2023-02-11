@@ -1,0 +1,68 @@
+.root {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.buttonUpd {
+    background-color: #1E6523;
+}
+
+.buttonDel {
+    background-color: #202F56;
+}
+
+.button {
+    color: rgb(211, 208, 208);
+    padding: 7px;
+    margin: 5px 15px;
+    border: none;
+}
+
+.productsCont {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.products {
+    width: 250px;
+    padding: 10px;
+    border: solid black 2px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.productsCont,
+.root,
+.topBar {
+    display: flex;
+}
+
+.topBar,
+.bottomBar {
+    margin: 20px 0;
+}
+
+.topBar,
+.bottomBar {
+    font-size: 1.2em;
+}
+
+.clear{
+    margin-top: 30px;
+}
+
+@media (min-width:300px) and (max-width:800px) {
+    .topBar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}

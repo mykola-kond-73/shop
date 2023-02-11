@@ -1,0 +1,36 @@
+.form,
+.root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form{
+    color: black;
+    max-width: 500px;
+}
+
+.button {
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 1.1em;
+    margin-left: 12px;
+    background-color: #1E6523;
+    color: rgb(211, 208, 208);
+    border: none;
+}
+
+.error{
+    text-align: center;
+}
+
+.button{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.error{
+    margin:30px 10px;
+}

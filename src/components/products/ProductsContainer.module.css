@@ -1,0 +1,23 @@
+
+.products{
+    grid-area:cont;
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (min-width:800px){
+    .rootProductsContainer{
+    display: grid;
+      margin: 0 auto;
+      width: 100%;
+    
+      grid-template-areas:
+        "men men"
+        "nav cont";
+      grid-template-rows: 60px 1fr;
+      grid-template-columns: 1fr 8.5fr;
+      grid-gap: 10px;
+    }
+}

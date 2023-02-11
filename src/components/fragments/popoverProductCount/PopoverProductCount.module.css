@@ -1,0 +1,23 @@
+.plus{
+    font-size: 1.3em;
+    font-weight: 900;
+    color:#3BC344;
+}
+
+.button{
+    background-color:#1E6523 ;
+    color: rgb(211, 208, 208);
+
+}
+
+.buttonDisabled{
+    background-color:#035809 ;
+    color: rgb(127, 125, 125);
+}
+
+.button,
+.buttonDisabled{
+    font-size: 1.1em;
+    padding: 8px;
+    border:none;
+}

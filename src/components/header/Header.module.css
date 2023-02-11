@@ -1,0 +1,30 @@
+.rootHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    height:60px;
+    background-color: #174B4D;
+
+    margin-bottom: 3px;
+}
+
+.links{
+    margin: 0 20px;
+    padding: 5px 0;
+    color: rgb(211, 208, 208);
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.active,
+.links:hover{
+    color:#657DB9;
+}
+
+@media (max-width:450px){
+    .rootHeader{
+        height:100px
+    }
+}

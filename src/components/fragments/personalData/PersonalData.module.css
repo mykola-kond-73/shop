@@ -1,0 +1,52 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    margin: 20px;
+}
+
+.names {
+    display: inline-block;
+    margin-left: 7px;
+}
+
+.content {
+    font-size: 1.3em;
+}
+
+.field {
+    margin: 5px 0;
+}
+
+.fieldName {
+    margin-right: 8px;
+}
+
+.adm{
+    color:#3BC344;
+    text-align: center;
+    margin: 10px;
+}
+
+.buttonCont {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    margin-left: 7px;
+}
+
+@media (max-width:400px) {
+    .buttonCont {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .button {
+        margin-top: 7px;
+    }
+}
