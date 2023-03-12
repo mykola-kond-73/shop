@@ -44,7 +44,7 @@ export function* createStaffWorker(action:ReturnType<typeof sagaCreateStaff>){
         yield put(setCreateStaffInitialize(true))
         if(action.data.isAdmin) action.data.secretKey=process.env.REACT_APP_KEY
         const data = runData(code, action.data, ['name', 'email', 'phone', 'password','secretKey','role'])
-        debugger
+
         yield call(() => StaffAPI.createStaff(data))
         yield put(setStaffCreateErrorData(null, null))
         

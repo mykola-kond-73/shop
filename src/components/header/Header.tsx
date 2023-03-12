@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { createFromIconfontCN } from '@ant-design/icons';
 import classes from './Header.module.css'
@@ -24,7 +24,7 @@ export const Header = () => {
     const customer = useSelector(getCustomerData)
     const isAuth = useSelector(getIsAuth)
     const visibleModal = useSelector(getVisibleModal)
-
+    
     return <div className={classes.rootHeader}>
         {visibleModal && <ModalCreateCustomer />}
 
@@ -41,7 +41,7 @@ export const Header = () => {
                 ? <NavLink to={`/customer/${customer._id}`} className={(isActive)=>!isActive?classes.active:classes.links}>
                     Personal Office
                 </NavLink>
-                : isAuth && staff
+                : localStorage.getItem('token') && staff
                     ? <NavLink to={`/staff/${staff._id}`} className={(isActive)=>!isActive?classes.active:classes.links}>
                         Personal Office
                     </NavLink>

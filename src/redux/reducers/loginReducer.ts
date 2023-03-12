@@ -1,6 +1,4 @@
-import { loginAPI } from '../../API/loginAPI'
 import { LoginActionType, LoginConstantsEnum, LoginInitialStateType } from '../../types/redux/reducers/loginTypes'
-import { setLoginErrorData } from './errorReducer'
 
 const initialState:LoginInitialStateType={
     isAuth:false

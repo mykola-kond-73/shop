@@ -9,7 +9,7 @@ import { errorModal, successModal } from '../../../../utils/modal'
 import { FilterBarOrders } from '../../../fragments/filterBar/FilterBarOrders';
 import classes from '../../CRM.module.css'
 
-const { Column} = Table;
+const { Column } = Table;
 
 export const OrdersPage = () => {
     const ordersData = useSelector(getOrderModData)
@@ -20,23 +20,37 @@ export const OrdersPage = () => {
     const initialDeleteOrder = useSelector(getInitialDeleteOrder)
     const initialUpdateOrder = useSelector(getInitialUpdateOrder)
 
-    const filterOrderData=useSelector(getFilterOrderData)
+    const filterOrderData = useSelector(getFilterOrderData)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getOrdersDataSaga(page, size,filterOrderData))
+        dispatch(getOrdersDataSaga(page, size, filterOrderData))
     }, [filterOrderData])
 
-    const remove = (orderId:string) => dispatch(deleteOrderSaga(orderId, successModal('Замовлення успішно видалено'), errorModal('Нажаль у вас не вийшло видалити замовлення. \n Бажаєте спробувати ще раз?'), page, size,filterOrderData))
+    const remove = (orderId: string) =>{
+        dispatch(deleteOrderSaga(
+            orderId,
+            successModal('Замовлення успішно видалено'),
+            errorModal('Нажаль у вас не вийшло видалити замовлення. \n Бажаєте спробувати ще раз?'),
+            page,
+            size,
+            filterOrderData
+        ))
+    }
 
     if (initializeOrders || !ordersData) {
         return <Spin size="large" />
     } else {
         return (
             <>
-                <FilterBarOrders/>
-                <Table className={classes.antTable} rowKey={(record)=>record._id} dataSource={ordersData} pagination={{ pageSize: size, total: totalCount, current: page,onChange: (page, size) => dispatch(getOrdersDataSaga(page, size,filterOrderData)) }} >
+                <FilterBarOrders />
+                <Table
+                    className={classes.antTable}
+                    rowKey={(record) => record._id} 
+                    dataSource={ordersData} 
+                    pagination={{ pageSize: size, total: totalCount, current: page, onChange: (page, size) => dispatch(getOrdersDataSaga(page, size, filterOrderData)) }} 
+                >
                     <Column title="id" dataIndex="_id" key="_id" />
                     <Column title="comment" dataIndex="comment" key="comment" />
                     <Column title="customer" dataIndex="customer" key="customer" />

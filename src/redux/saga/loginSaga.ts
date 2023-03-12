@@ -15,9 +15,10 @@ export const sagaLoginCustomer=(login:string,password:string)=>({type:LoginSagas
 
 export function* loginStaffWorker(action:ReturnType<typeof sagaLoginStaff>){
     try{
-        const responce:ResponceType<loginDataType>=yield call(()=>loginAPI.loginStaff(code(`${action.login}:${action.password}`)))
+        const responce:ResponceType<loginDataType>=yield call(()=>loginAPI.loginStaff(code(action.login),code(action.password)))
         yield put(setLoginErrorData(null,null))
 
+        localStorage.setItem('token',responce.data.data.accessToken)
         yield put(setStaffId(responce.data.data.userId))
 
         yield put({type:StaffSagasConstantsType.SAGA_GET_STAFF,hash:responce.data.data.userId})
@@ -36,9 +37,10 @@ export function* loginStaffWorker(action:ReturnType<typeof sagaLoginStaff>){
 
 export function* loginCustomerWorker(action:ReturnType<typeof sagaLoginCustomer>){
     try{
-        const responce:ResponceType<loginDataType>=yield call(()=>loginAPI.LoginCustomer(code(`${action.login}:${action.password}`)))
+        const responce:ResponceType<loginDataType>=yield call(()=>loginAPI.LoginCustomer(code(action.login),code(action.password)))
         yield put(setLoginErrorData(null,null))
 
+        localStorage.setItem('token',responce.data.data.accessToken)
         yield put(setCustomerId(responce.data.data.userId))
 
         yield put({type:CustomersSagasConstantsEnum.SAGA_GET_CUSTOMER,hash:responce.data.data.userId})
@@ -66,12 +68,10 @@ export function* unloginWorker(action:unloginWorkerSagaType){
         yield put(setCustomerData(null))
         yield put(setInitializeCustomer(false))
 
-        // throw new Error()
+        localStorage.removeItem('token')
     }catch(error:any){
         if (error.response) {
-            yield put(setUnloginErrorData(error.response.data.mesage, error.response.data.resultCode))
-            
-            if(error.response.data.resultCode===401) yield put({type:LoginSagasConstantsEnum.SAGA_DELETE_SESSION})
+            yield put(setUnloginErrorData(error.response.data.mesage, error.response.data.resultCode))            
         } else if (error.request) {
             yield put(setUnloginErrorData(error.message, error.request.status))
         } else {

@@ -8,4 +8,6 @@ export type unloginWorkerSagaType={type:LoginSagasConstantsEnum.SAGA_DELETE_SESS
 
 export type loginDataType={
     userId:string
+    accessToken:string
+    refreshToken:string
 }
