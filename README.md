@@ -55,8 +55,22 @@ This command starts eslint. All project files are passed through eslint, which f
 
 This command starts eslint. All project files are passed through eslint, which finds inconsistencies in code writing style, according to the .eslintrc.yml file. All found inconsistencies that eslint can correct, it corrects itself.
 
-# `.env file`
+----
+
+## `.env file`
 In .env file musst be kyes:
 
 `REACT_APP_SERVER` - with url-address on your server (localhost:8000)
+
 `REACT_APP_KEY` - with secret key
+
+----
+
+## `Accounts`
+
+1. Admin:
+    1. login: test@gmail.com
+    2. password: testingpass
+2. USer:
+    1. login: testCust@gmail.com
+    2. password: testingCust
